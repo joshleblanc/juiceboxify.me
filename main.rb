@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/cross-origin'
+require 'sinatra/cross_origin'
 require 'mini_magick'
 require 'rest-client'
 require 'dotenv/load'
