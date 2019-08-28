@@ -33,7 +33,7 @@ end
 get '/api' do
     if params[:url]
         begin
-            filename = juiceboxify(CGI.escape(params[:url]))
+            filename = juiceboxify(params[:url])
             if filename
                 send_file File.join(Dir.pwd, "public/images/#{filename}"), disposition: :inline, type: "image/jpeg"
             else
