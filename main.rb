@@ -25,10 +25,6 @@ get '/' do
     end
 end
 
-post '/' do
-    redirect_to "?url=#{params[:url]}"
-end
-
 get '/api' do
     if params[:url]
         filename = juiceboxify(params[:url])

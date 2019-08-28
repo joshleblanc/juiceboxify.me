@@ -1,4 +1,20 @@
 module Utilities
+    def images_path
+        File.join(Dir.pwd, "public/images")
+    end
+
+    # Age of a file in days
+    def file_age(path) 
+        (Time.now - File.stat(path).mtime).to_i / 86400.0
+    end
+    
+    # Delete files older than a day
+    def delete_old_images
+        Dir["#{images_path}/*.*"].each do |path|
+            File.delete(path) if file_age(path) > 1
+        end
+    end
+
     def juiceboxify(url)
         data = Azure::Face.detect(url, { returnFaceLandmarks: true })
         if data.empty?
@@ -31,7 +47,8 @@ module Utilities
             end
     
             name = File.basename(base_image.tempfile.path)
-            base_image.write(File.join(Dir.pwd, "public/images/#{name}"))
+            delete_old_images
+            base_image.write(File.join(images_path, name))
             name
         end
     end
