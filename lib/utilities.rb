@@ -36,13 +36,12 @@ module Utilities
                 }
         
                 width = (pupil_right['x'] - pupil_left['x']) / 1.5
-                scale = juicebox.width / width
-    
-                juicebox.resize "#{width}x#{juicebox.height * scale}"
+                juicebox.resize "#{width}x"
                 
                 base_image = base_image.composite(juicebox) do |c|
                     c.compose "Over"
-                    c.geometry "+#{mouth_middle[:x]}+#{mouth_middle[:y]}"
+                    # I'm guessing the straw's tip is 7% below the top of the image
+                    c.geometry "+#{mouth_middle[:x]}+#{mouth_middle[:y] - (juicebox.height * 0.07)}" 
                 end
             end
     
