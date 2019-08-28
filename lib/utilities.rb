@@ -12,12 +12,14 @@ module Utilities
                 pupil_right = face_landmarks['pupilRight']
                 mouth_left = face_landmarks['mouthLeft']
                 mouth_right = face_landmarks['mouthRight']
+                upper_lip_bottom = face_landmarks['upperLipBottom']
+                under_lip_top = face_landmarks['underLipTop']
                 mouth_middle = {
                     x: mouth_left['x'] + (mouth_right['x'] - mouth_left['x']) / 2,
-                    y: [mouth_right['y'], mouth_left['y']].min + (mouth_right['y'] - mouth_left['y']) / 2
+                    y: upper_lip_bottom['y'] + (under_lip_top['y'] - upper_lip_bottom['y']) / 2
                 }
         
-                width = (pupil_right['x'] - pupil_left['x']) * 1.5
+                width = (pupil_right['x'] - pupil_left['x']) / 1.5
                 scale = juicebox.width / width
     
                 juicebox.resize "#{width}x#{juicebox.height * scale}"

@@ -5,6 +5,10 @@ require 'dotenv/load'
 require_relative './lib/azure/face'
 require_relative './lib/utilities'
 
+if development?
+    require 'byebug'
+end
+
 include Utilities
 
 get '/' do
