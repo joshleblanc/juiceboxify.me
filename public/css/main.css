@@ -1,0 +1,29 @@
+body > main {
+    max-width: 480px;
+    margin: auto;
+}
+
+body {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+.title, .subtitle {
+    margin: 0;
+}
+
+.subtitle {
+    color: grey;
+}
+
+input {
+    width: 100%
+}
+
+section {
+    padding: 8px;
+}
