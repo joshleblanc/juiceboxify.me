@@ -47,7 +47,11 @@ module Utilities
     
             name = File.basename(base_image.tempfile.path)
             delete_old_images
-            base_image.write(File.join(images_path, name))
+            base_image.tempfile.open
+            content = base_image.tempfile.read
+            File.open(File.join(images_path, name), 'wb') do |file|
+                file.write(content)
+            end
             name
         end
     end
