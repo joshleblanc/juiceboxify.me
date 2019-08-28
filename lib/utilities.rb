@@ -35,7 +35,7 @@ module Utilities
                     y: upper_lip_bottom['y'] + (under_lip_top['y'] - upper_lip_bottom['y']) / 2
                 }
         
-                width = (pupil_right['x'] - pupil_left['x'])
+                width = (pupil_right['x'] - pupil_left['x']) * 1.5
                 juicebox.resize "#{width}x"
                 
                 base_image = base_image.composite(juicebox) do |c|
