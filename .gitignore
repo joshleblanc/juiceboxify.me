@@ -1,3 +1,4 @@
 .env
 public/images
 !public/images/.keep
+.byebug_history
