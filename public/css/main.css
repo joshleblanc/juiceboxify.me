@@ -1,29 +1,81 @@
-body > main {
-    max-width: 480px;
-    margin: auto;
-}
-
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,700,900);
 body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Poppins", Roboto, sans-serif;
+    margin: 0;
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 15px;
+    background: #121212;
+    line-height: 1;
+}
+main {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    height: 100%;
+}
+.form-container {
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    padding: 0 1rem;
+}
+.form-container header .title--main {
+    font-weight: 900;
+    font-size: 5rem;
+    color: #e6c81e;
+    margin: 1.5rem 0;
+}
+.form-container header .title--sub {
+    font-weight: 700;
+    font-size: 3.75rem;
+    color: #121212;
+    background: #e6c81e;
+    display: inline-block;
+    padding: .6rem;
+}
+.form-container form {
+    margin-top: 4.5rem;
+}
+.form-container form input {
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-bottom: 2px solid #e6c81e;
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem;
+    padding: .77rem 1.5rem;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+}
+.form-container form label {
+    margin: .55rem 1.5rem;
+    font-size: .85rem;
+    font-weight: 500;
+    color: #dedede;
+    display: block;
+}
+.form-container form .button-container {
+    margin: 2rem 1.5rem;
+    text-align: right;
+}
+.form-container form .button-container button {
+    padding: .65rem 1.5rem;
+    background: #e6c81e;
+    color: #121212;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.result {
     display: flex;
     align-items: center;
-}
-
-img {
-    width: 100%;
-}
-
-.title, .subtitle {
-    margin: 0;
-}
-
-.subtitle {
-    color: grey;
-}
-
-input {
-    width: 100%
-}
-
-section {
-    padding: 8px;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #EDEDED;
 }
