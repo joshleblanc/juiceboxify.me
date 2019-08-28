@@ -31,6 +31,7 @@ get '/' do
 end
 
 get '/api' do
+    headers 'Access-Control-Allow-Origin' => '*'
     if params[:url]
         begin
             filename = juiceboxify(params[:url])
