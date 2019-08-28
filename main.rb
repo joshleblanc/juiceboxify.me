@@ -13,10 +13,15 @@ include Utilities
 
 get '/' do
     if params[:url]
-        filename = juiceboxify(params[:url])
-        if filename
-            @path = "images/#{filename}"
-        else
+        begin
+            filename = juiceboxify(params[:url])
+            if filename
+                @path = "images/#{filename}"
+            else
+                @not_found = true
+            end
+        rescue StandardError => e
+            p e.message
             @not_found = true
         end
         erb :index
@@ -27,10 +32,17 @@ end
 
 get '/api' do
     if params[:url]
-        filename = juiceboxify(params[:url])
-        if filename
-            send_file File.join(Dir.pwd, "public/images/#{filename}"), disposition: :inline, type: "image/jpeg"
-        else
+        begin
+            filename = juiceboxify(CGI.escape(params[:url]))
+            if filename
+                send_file File.join(Dir.pwd, "public/images/#{filename}"), disposition: :inline, type: "image/jpeg"
+            else
+                JSON.generate({
+                    error: "No faces detected"
+                })
+            end
+        rescue StandardError => e
+            p e.message
             JSON.generate({
                 error: "No faces detected"
             })
