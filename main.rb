@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/cross-origin'
 require 'mini_magick'
 require 'rest-client'
 require 'dotenv/load'
@@ -31,7 +32,7 @@ get '/' do
 end
 
 get '/api' do
-    headers 'Access-Control-Allow-Origin' => '*'
+    cross_origin
     if params[:url]
         begin
             filename = juiceboxify(params[:url])

@@ -8,3 +8,5 @@ gem "mini_magick", "~> 4.9"
 gem "dotenv", "~> 2.7"
 
 gem "byebug", "~> 11.0", :group => :development
+
+gem "sinatra-cross_origin", "~> 0.4.0"
