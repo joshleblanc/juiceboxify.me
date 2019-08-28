@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/cross_origin'
 require 'mini_magick'
 require 'rest-client'
 require 'dotenv/load'
@@ -32,7 +31,7 @@ get '/' do
 end
 
 get '/api' do
-    cross_origin
+    headers 'Access-Control-Allow-Origin' => '*' 
     content_type 'application/json'
     if params[:url]
         begin
