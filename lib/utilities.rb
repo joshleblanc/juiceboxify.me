@@ -23,8 +23,8 @@ module Utilities
             return nil
         else
             base_image = MiniMagick::Image.open(url)
-            juicebox = MiniMagick::Image.open(File.join(Dir.pwd, "assets/juicebox.png"))
             data.each do |datum|
+                juicebox = MiniMagick::Image.open(File.join(Dir.pwd, "assets/juicebox.png"))
                 face_landmarks = datum['faceLandmarks']
                 pupil_left = face_landmarks['pupilLeft']
                 pupil_right = face_landmarks['pupilRight']
