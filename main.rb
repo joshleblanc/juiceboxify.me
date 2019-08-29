@@ -32,7 +32,13 @@ get '/' do
 end
 
 get '/api' do
-    RestClient.post("sa.juiceboxify.me/app", JSON.generate({ ua: request.user_agent, url: request.url }))
+    RestClient.post("sa.juiceboxify.me/app", JSON.generate({ ua: request.user_agent, url: request.url })) do |resp, _, _|
+        if resp.code == 301
+            resp.follow_redirection
+        else
+            resp.return!
+        end
+    end
     headers 'Access-Control-Allow-Origin' => '*' 
     content_type 'application/json'
     if params[:url]
