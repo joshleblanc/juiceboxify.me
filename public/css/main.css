@@ -1,10 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:400,500,700,900);
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+
 body {
     width: 100vw;
     height: 100vh;
     font-family: "Poppins", Roboto, sans-serif;
     margin: 0;
-    overflow: hidden;
     font-weight: 400;
     font-size: 15px;
     background: #121212;
@@ -13,7 +20,16 @@ body {
 main {
     display: grid;
     grid-template-columns: 4fr 6fr;
-    height: 100%;
+    height: calc(100% - 60px);
+    grid-auto-rows: 1fr;
+}
+
+@media(max-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: unset;
+    }
 }
 .form-container {
     background: rgba(0,0,0,.5);
@@ -22,13 +38,13 @@ main {
 }
 .form-container header .title--main {
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 3rem;
     color: #e6c81e;
     margin: 1.5rem 0;
 }
 .form-container header .title--sub {
     font-weight: 700;
-    font-size: 3.75rem;
+    font-size: 2.75rem;
     color: #121212;
     background: #e6c81e;
     display: inline-block;
@@ -78,8 +94,36 @@ main {
     font-size: 2rem;
     font-weight: 900;
     color: #EDEDED;
+    background-color: rgba(0,0,0,.5);
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dac864;
+}
+
+footer a {
+    padding-left: 3px;
+}
+
+footer a:visited {
+    color: inherit;
+}
+
+small {
+    padding-top: 12px;
+    padding-right: 3px;
+}
+
+.heart {
+    color: red;
+    padding: 3px;
 }
