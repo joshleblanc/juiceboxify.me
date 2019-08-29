@@ -16,6 +16,8 @@ module Utilities
     end
 
     def juiceboxify(url)
+        name = Digest::SHA1.hexdigest(url)
+        return name if File.exists?(File.join(images_path, name))
         data = Azure::Face.detect(url, { returnFaceLandmarks: true })
         if data.empty?
             return nil
@@ -45,8 +47,7 @@ module Utilities
                 end
             end
     
-            name = File.basename(base_image.tempfile.path)
-            delete_old_images
+            # delete_old_images
             base_image.tempfile.open
             content = base_image.tempfile.read
             File.open(File.join(images_path, name), 'wb') do |file|

@@ -2,6 +2,7 @@ require 'sinatra'
 require 'mini_magick'
 require 'rest-client'
 require 'dotenv/load'
+require 'digest/sha1'
 require_relative './lib/azure/face'
 require_relative './lib/utilities'
 
