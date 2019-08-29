@@ -111,24 +111,20 @@ footer {
     align-items: center;
     justify-content: center;
     color: #dac864;
-}
-
-footer a {
-    padding-left: 3px;
+    flex-wrap: wrap;
 }
 
 footer a:visited {
     color: inherit;
 }
 
-.notice-me {
-    padding-top: 12px;
-    padding-right: 3px;
-}
-
 .heart {
     color: red;
-    padding: 3px;
+}
+
+p {
+    text-align: center;
+    width: 100%;
 }
 
 
