@@ -40,7 +40,7 @@ main {
     font-weight: 900;
     font-size: 3rem;
     color: #e6c81e;
-    margin: 1.5rem 0;
+    margin-top: 1.5rem;
 }
 .form-container header .title--sub {
     font-weight: 700;
@@ -49,6 +49,8 @@ main {
     background: #e6c81e;
     display: inline-block;
     padding: .6rem;
+    position: relative;
+    top: -4px;
 }
 .form-container form {
     margin-top: 4.5rem;
