@@ -149,7 +149,8 @@ footer a:visited {
     opacity: 0.5;
 }
   
-.input:focus + .label {
+.input:focus + .label,
+.input:valid + .label {
     font-size: 75%;
     transform: translate(0, -170%);
     opacity: 1;
