@@ -16,7 +16,7 @@ module Utilities
     end
 
     def juiceboxify(url)
-        name = Digest::SHA1.hexdigest(url)
+        name = "#{Digest::SHA1.hexdigest(url)}.jpg"
         return name if File.exists?(File.join(images_path, name))
         data = Azure::Face.detect(url, { returnFaceLandmarks: true })
         if data.empty?
