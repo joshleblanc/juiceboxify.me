@@ -67,12 +67,13 @@ main {
     font-size: 15px;
     font-weight: 500;
 }
-.form-container form label {
+.form-container form label, .subtitle {
     margin: .55rem 1.5rem;
     font-size: .85rem;
     font-weight: 500;
     color: #dedede;
     display: block;
+    pointer-events: none;
 }
 .form-container form .button-container {
     margin: 2rem 1.5rem;
@@ -120,7 +121,7 @@ footer a:visited {
     color: inherit;
 }
 
-small {
+.notice-me {
     padding-top: 12px;
     padding-right: 3px;
 }
@@ -128,4 +129,28 @@ small {
 .heart {
     color: red;
     padding: 3px;
+}
+
+
+/* 
+    Credits to Paul
+    https://codepen.io/peiche/pen/xOVpPo
+*/
+.input-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    position: absolute;
+    top: 0;
+    padding: 11px 0 0 13px;
+    transition: all 200ms;
+    opacity: 0.5;
+}
+  
+.input:focus + .label {
+    font-size: 75%;
+    transform: translate(0, -170%);
+    opacity: 1;
 }

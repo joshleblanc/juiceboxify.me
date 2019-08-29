@@ -4,8 +4,11 @@
         <div class="title--sub">Me</div>
     </header>
     <form method="get">
-        <input placeholder="Image URI" name="url" />
-        <label for="url">Enter an URI of an image to make it juicy</label>
+        <div class="input-container">
+            <input name="url" class="input" />
+            <label for="url" class="label">Enter an image URL</label>
+            <small class="subtitle">If a face is found, it will be given juice!</small>
+        </div>
         <section class="button-container">
             <button type="submit">Juicify it!</button>
         </section>
