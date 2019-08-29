@@ -79,3 +79,7 @@ main {
     font-weight: 900;
     color: #EDEDED;
 }
+
+img {
+    width: 100%;
+}
