@@ -1,7 +1,7 @@
 module Azure
     class Face
         class << self
-            @@base_url = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/"
+            @@base_url = "https://juiceboxify.cognitiveservices.azure.com/face/v1.0/"
             @@headers = {
                 'Ocp-Apim-Subscription-Key': ENV['azure_face_api_key'],
                 'Content-Type': 'application/json'
