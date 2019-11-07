@@ -1,0 +1,7 @@
+image:
+  file: Dockerfile
+tasks:
+  - init:
+      bundle install
+    command:
+      bundle exec ruby main.rb
