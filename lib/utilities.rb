@@ -22,7 +22,7 @@ module Utilities
         if data.empty?
             return nil
         else
-            base_image = MiniMagick::Image.open(url)
+            base_image = MiniMagick::Image.open(url).auto_orient
             data.each do |datum|
                 juicebox = MiniMagick::Image.open(File.join(Dir.pwd, "assets/juicebox.png"))
                 face_landmarks = datum['faceLandmarks']
