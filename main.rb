@@ -48,7 +48,8 @@ get '/api' do
             filename = juiceboxify(params[:url])
             if filename
                 content_type 'image/jpeg'
-                send_file File.join(Dir.pwd, "public/images/#{filename}"), disposition: :inline, type: "image/jpeg"
+                response = RestClient::Request.execute(method: :get, url: "https://juiceboxify.sfo2.cdn.digitaloceanspaces.com/#{filename}", raw_response: true)
+                send_file response.file, disposition: :inline, type: "image/jpeg"
             else
                 JSON.generate({
                     error: "No faces detected"
