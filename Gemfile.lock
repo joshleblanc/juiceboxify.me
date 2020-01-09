@@ -5,6 +5,7 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
+    ffi (1.11.3-x64-mingw32)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -22,6 +23,12 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rest-client (2.1.0-x64-mingw32)
+      ffi (~> 1.9)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     sinatra (2.0.7)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -35,6 +42,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   byebug (~> 11.0)
@@ -45,4 +53,4 @@ DEPENDENCIES
   sinatra-cross_origin (~> 0.4.0)
 
 BUNDLED WITH
-   2.0.1
+   2.1.2
