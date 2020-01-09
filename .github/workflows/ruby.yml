@@ -8,10 +8,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Ruby 2.7
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.7.x
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag docker.pkg.github.com/joshleblanc/juiceboxify.me/juiceboxify:$(date +%s) --tag docker.pkg.github.com/joshleblanc/juiceboxify.me/juiceboxify:latest
     - name: Login to registry
