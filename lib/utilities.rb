@@ -17,7 +17,7 @@ module Utilities
 
     def juiceboxify(url)
         name = "#{Digest::SHA1.hexdigest(url)}.jpg"
-        return name if File.exists?(File.join(images_path, name))
+        return name if Amazon::S3.exists(name)
         data = Azure::Face.detect(url, { returnFaceLandmarks: true })
         if data.empty?
             return nil
@@ -50,9 +50,7 @@ module Utilities
             # delete_old_images
             base_image.tempfile.open
             content = base_image.tempfile.read
-            File.open(File.join(images_path, name), 'wb') do |file|
-                file.write(content)
-            end
+            Amazon::S3.upload(content, name)
             name
         end
     end

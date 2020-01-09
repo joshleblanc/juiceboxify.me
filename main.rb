@@ -3,7 +3,9 @@ require 'mini_magick'
 require 'rest-client'
 require 'dotenv/load'
 require 'digest/sha1'
+require "aws-sdk-s3"
 require_relative './lib/azure/face'
+require_relative './lib/amazon/s3'
 require_relative './lib/utilities'
 
 if development?
@@ -17,7 +19,7 @@ get '/' do
         begin
             filename = juiceboxify(params[:url])
             if filename
-                @path = "images/#{filename}"
+                @path = "https://juiceboxify.sfo2.cdn.digitaloceanspaces.com/#{filename}"
             else
                 @not_found = true
             end
