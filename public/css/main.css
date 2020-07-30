@@ -151,3 +151,7 @@ p {
     transform: translate(0, -170%);
     opacity: 1;
 }
+
+a:link {
+  color: inherit;
+}
