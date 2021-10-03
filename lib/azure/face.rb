@@ -3,7 +3,7 @@ module Azure
         class << self
             @@base_url = "https://juiceboxify.cognitiveservices.azure.com/face/v1.0/"
             @@headers = {
-                'Ocp-Apim-Subscription-Key': ENV['azure_face_api_key'],
+                'Ocp-Apim-Subscription-Key': ENV['AZURE_FACE_API_KEY'],
                 'Content-Type': 'application/json'
             }
 
