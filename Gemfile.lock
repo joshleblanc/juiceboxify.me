@@ -33,6 +33,9 @@ GEM
     mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
     netrc (0.11.0)
+    nio4r (2.5.8)
+    puma (6.0.2)
+      nio4r (~> 2.0)
     rack (2.2.6.2)
     rack-protection (2.2.4)
       rack
@@ -68,6 +71,7 @@ DEPENDENCIES
   byebug (~> 11.0)
   dotenv (~> 2.7)
   mini_magick (~> 4.9)
+  puma (~> 6.0)
   rest-client (~> 2.1)
   sinatra (~> 2.0)
   sinatra-cross_origin (~> 0.4.0)

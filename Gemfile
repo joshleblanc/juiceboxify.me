@@ -12,3 +12,5 @@ gem "byebug", "~> 11.0", :group => :development
 gem "sinatra-cross_origin", "~> 0.4.0"
 
 gem "aws-sdk-s3", "~> 1.60"
+
+gem "puma", "~> 6.0"
